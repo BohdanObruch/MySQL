@@ -3,13 +3,14 @@ from dotenv import dotenv_values
 
 dotenv = dotenv_values()
 password = dotenv.get('PASSWORD')
+database_name = dotenv.get('DATABASE_MYSQL')
 
 # Establishing a database connection
 conn = mysql.connector.connect(
     host='localhost',
     user='root',
     password=f'{password}',
-    database='voitixler'
+    database=f'{database_name}'
 )
 
 # Creating a Cursor Object
@@ -43,6 +44,7 @@ conn.close()
 #
 # dotenv = dotenv_values()
 # password = dotenv.get('PASSWORD')
+# database_name = dotenv.get('DATABASE_MYSQL')
 #
 # # Establishing a database connection
 #
@@ -50,7 +52,7 @@ conn.close()
 #     host='localhost',
 #     user='root',
 #     password=f'{password}',
-#     database='voitixler'
+#     database=f'{database_name}'
 # )
 #
 # # Creating a Cursor Object
