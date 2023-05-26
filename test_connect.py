@@ -16,7 +16,7 @@ conn = mysql.connector.connect(
 cursor = conn.cursor()
 
 # Executing a SQL query
-cursor.execute('SELECT * FROM service')
+cursor.execute('SELECT * FROM operation')
 
 # Get description of columns
 columns = [column[0] for column in cursor.description]
